@@ -93,7 +93,7 @@ resetTrigger.addEventListener('click', function() {
         const password = prompt("Masukkan kode akses untuk reset data:");
         
         // Anda bisa mengganti 'admin123' dengan kode pilihan Anda
-        if (password === 'admin123') {
+        if (password === 'test123') {
             if (confirm("Hapus semua data ucapan dan statistik?")) {
                 localStorage.removeItem('weddingWishes');
                 // Reload halaman untuk membersihkan semua variabel
