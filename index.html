@@ -15,7 +15,10 @@
         <div data-aos="zoom-in" data-aos-duration="1500">
             <p class="u-text">WEDDING ANNOUNCEMENT</p>
             <h1>Dedy & Winda</h1>
-            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <p>Kepada Yth</p>
+            <p>Bapak/Ibu/Saudara/i</p>
+            <p>&nbsp;</p>
+            <p>Ditempat:</p>
             <p>&nbsp;</p>
             <button class="btn-open" onclick="startWedding()">Buka Undangan</button>
         </div>
@@ -195,6 +198,43 @@ mempelai:</p>
         </div>
     </section>
 
+<section class="bg-alt rsvp-section">
+    <div class="container">
+        <h2 id="reset-trigger" class="section-title" data-aos="fade-up">Wishes</h2>
+        <p class="section-subtitle" data-aos="fade-up">Kirimkan Ucapan Dan Doa Restu Untuk Kami</p>
+
+        <div class="rsvp-stats" data-aos="zoom-in">
+            <div class="stat-box hadir">
+                <span id="count-hadir">0</span>
+                <p>Hadir</p>
+            </div>
+            <div class="stat-box tidak-hadir">
+                <span id="count-tidak">0</span>
+                <p>Tidak Hadir</p>
+            </div>
+            <div class="stat-box ragu">
+                <span id="count-ragu">0</span>
+                <p>Masih Ragu</p>
+            </div>
+        </div>
+
+        <form id="rsvp-form" class="wishes-form" data-aos="fade-up">
+            <input type="text" id="input-nama" placeholder="Nama" required>
+            <textarea id="input-ucapan" placeholder="Ucapan" rows="4" required></textarea>
+            <select id="input-kehadiran" required>
+                <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Masih Ragu">Masih Ragu</option>
+            </select>
+            <button type="submit" class="btn-send">Kirim</button>
+        </form>
+
+        <div id="wishes-container" class="wishes-display">
+            </div>
+    </div>
+</section>
+
     <section class="bg-alt">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Daftar Kehadiran</h2>
@@ -222,6 +262,8 @@ mempelai:</p>
             </form>
         </div>
     </section>
+
+
 
     <footer class="footer">
         <p>© 2026 Dedy & Winda. Created with Love.</p>
