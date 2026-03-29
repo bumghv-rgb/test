@@ -198,43 +198,64 @@ mempelai:</p>
         </div>
     </section>
 
-<section class="bg-alt rsvp-section">
+<section class="rsvp-section">
     <div class="container">
-        <h2 id="reset-trigger" class="section-title" data-aos="fade-up">Wishes</h2>
-        <p class="section-subtitle" data-aos="fade-up">Kirimkan Ucapan Dan Doa Restu Untuk Kami</p>
-
-        <div class="rsvp-stats" data-aos="zoom-in">
-            <div class="stat-box hadir">
-                <span id="count-hadir">0</span>
-                <p>Hadir</p>
-            </div>
-            <div class="stat-box tidak-hadir">
-                <span id="count-tidak">0</span>
-                <p>Tidak Hadir</p>
-            </div>
-            <div class="stat-box ragu">
-                <span id="count-ragu">0</span>
-                <p>Masih Ragu</p>
-            </div>
+        <h2 id="reset-trigger" class="section-title">Wishes</h2>
+        <div class="rsvp-stats">
+            <div class="stat-box hadir"><span id="count-hadir">0</span><p>Hadir</p></div>
+            <div class="stat-box tidak-hadir"><span id="count-tidak">0</span><p>Tidak Hadir</p></div>
+            <div class="stat-box ragu"><span id="count-ragu">0</span><p>Ragu</p></div>
         </div>
 
-        <form id="rsvp-form" class="wishes-form" data-aos="fade-up">
-            <input type="text" id="input-nama" placeholder="Nama" required>
-            <textarea id="input-ucapan" placeholder="Ucapan" rows="4" required></textarea>
+        <form id="rsvp-form" class="wishes-form">
+            <input type="text" id="input-nama" placeholder="Nama Anda" required>
+            <textarea id="input-ucapan" placeholder="Ucapan & Doa" rows="4" required></textarea>
             <select id="input-kehadiran" required>
                 <option value="" disabled selected>Konfirmasi Kehadiran</option>
                 <option value="Hadir">Hadir</option>
                 <option value="Tidak Hadir">Tidak Hadir</option>
                 <option value="Masih Ragu">Masih Ragu</option>
             </select>
-            <button type="submit" class="btn-send">Kirim</button>
+            <button type="submit" class="btn-send">Kirim Ucapan</button>
         </form>
 
-        <div id="wishes-container" class="wishes-display">
-            </div>
+        <div id="wishes-container" class="wishes-display"></div>
     </div>
 </section>
 
+<div id="qr-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center;">
+    <div style="background: #fff; padding: 20px; border-radius: 15px; text-align: center; width: 90%; max-width: 320px; color: #333;">
+        <h3 style="margin-top: 0; color: #2c4a3e;">Konfirmasi Berhasil!</h3>
+        <div id="qrcode-area" style="margin: 15px 0;"></div>
+        <h4 id="qr-name-display" style="margin: 5px 0; text-transform: uppercase;"></h4>
+        <p style="font-size: 0.7rem; color: #666;">Screenshot barcode ini sebagai tanda terima.</p>
+        <button onclick="closeModal()" style="width: 100%; padding: 10px; background: #2c4a3e; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Tutup</button>
+    </div>
+</div>
+
+<section class="countdown-section" data-aos="fade-up">
+    <div class="container">
+        <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+        <div id="timer">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Hari</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Jam</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Menit</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Detik</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <footer class="footer">
         <p>© 2026 Dedy & Winda. Created with Love.</p>
@@ -242,5 +263,8 @@ mempelai:</p>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
+
+
 </body>
 </html>
