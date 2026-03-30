@@ -81,7 +81,7 @@ function updateDisplay() {
     }
 }
 
-// 3. Handler Kirim Form & Munculkan QR
+// 3. Handler Kirim Form & Munculkan QR (Hanya untuk yang Hadir)
 const rsvpForm = document.getElementById('rsvp-form');
 if (rsvpForm) {
     rsvpForm.addEventListener('submit', function(e) {
@@ -96,18 +96,25 @@ if (rsvpForm) {
         wishesData.push(dataBaru);
         localStorage.setItem('weddingWishes', JSON.stringify(wishesData));
 
-        // Generate & Tampilkan QR Modal
-        const isiQR = `TAMU: ${nama} | STATUS: ${hadir}`;
-        const urlQR = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(isiQR)};`;
-        
-        document.getElementById('qrcode-area').innerHTML = `<img src="${urlQR}" style="width:180px;">`;
-        document.getElementById('qr-name-display').innerText = nama;
-        document.getElementById('qr-modal').style.display = 'flex';
+        // LOGIKA BARU: Cek Kehadiran
+        if (hadir === 'Hadir') {
+            // Jika Hadir -> Kasih Barcode
+            const isiQR = `TAMU: ${nama} | STATUS: ${hadir}`;
+            const urlQR = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(isiQR)}`;
+            
+            document.getElementById('qrcode-area').innerHTML = `<img src="${urlQR}" style="width:180px;">`;
+            document.getElementById('qr-name-display').innerText = nama;
+            document.getElementById('qr-modal').style.display = 'flex';
+        } else {
+            // Jika Tidak Hadir atau Ragu -> Cukup Alert aja
+            alert(`Terima kasih ${nama}, ucapan doa kamu sudah tersimpan!`);
+        }
 
         rsvpForm.reset();
         updateDisplay();
     });
 }
+
 
 // 4. Fungsi Pelengkap (Tutup Modal & Reset Rahasia)
 function closeModal() { document.getElementById('qr-modal').style.display = 'none'; }
